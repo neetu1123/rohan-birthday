@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { story } from "../data/birthdayContent";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 import CinematicImage from "./CinematicImage";
+import RomanticBalloons from "./RomanticBalloons";
 import SceneHeading from "./SceneHeading";
 
 export default function StoryTimeline() {
@@ -17,7 +18,8 @@ export default function StoryTimeline() {
   const scaleY = useSpring(scrollYProgress, { stiffness: 70, damping: 24, mass: 0.4 });
 
   return (
-    <section id="story" className="relative px-5 py-28 md:px-10 md:py-36">
+    <section id="story" className="relative overflow-hidden px-5 py-28 md:px-10 md:py-36">
+      <RomanticBalloons />
       <div
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(36,21,38,0.55),transparent)]"
         aria-hidden="true"

@@ -4,6 +4,8 @@ import { Heart } from "lucide-react";
 import { useEffect } from "react";
 import { hero } from "../data/birthdayContent";
 import { scrollToSection } from "../lib/scroll";
+import CinematicImage from "./CinematicImage";
+import RomanticBalloons from "./RomanticBalloons";
 
 const sparkles = [
   { left: "8%", top: "16%", delay: "0s" },
@@ -21,12 +23,16 @@ export default function BirthdayHero() {
   }, []);
 
   return (
-    <section id="hero" className="relative flex min-h-[100dvh] items-center px-5 py-24">
+    <section id="hero" className="relative flex min-h-[100dvh] items-center overflow-hidden px-5 py-24">
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(100,39,67,0.42),transparent_62%)]"
         aria-hidden="true"
       />
+      <RomanticBalloons count={5} />
       <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center text-center">
+        <div className="relative mb-8 h-36 w-36 overflow-hidden rounded-full border border-gold/70 shadow-[0_0_40px_rgba(215,183,121,0.28)] sm:h-44 sm:w-44">
+          <CinematicImage src={hero.portrait} alt={hero.portraitAlt} priority />
+        </div>
         <div className="relative">
           {sparkles.map((sparkle) => (
             <span
